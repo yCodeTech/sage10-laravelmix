@@ -1,0 +1,34 @@
+/**
+ * Global
+ */
+
+// Container Size Classes \\
+// Outputs classes: .container--1920, .container--1640, etc.
+
+$container-sizes: 1920, 1640, 1520, 1445, 1380, 1100, 980, 900, 820, 790, 600;
+@each $container-size in $container-sizes {
+	.container--#{$container-size} {
+		margin-inline: auto;
+		width: #{$container-size}px;
+		max-width: calc(100% - 60px);
+	}
+}
+
+// Colour Classes \\
+
+$colours: ("red", $primary), ("blue", $secondary), ("green", $tertiary), ("white", $white);
+@each $name, $colour in $colours {
+	.colour--#{$name} {
+		color: $colour;
+		background-color: $colour;
+	}
+}
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+.column {
+	display: flex;
+	flex-flow: column;
+}

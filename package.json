@@ -1,27 +1,36 @@
 {
-  "name": "sage",
-  "private": true,
-  "browserslist": [
-    "extends @roots/browserslist-config"
-  ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "type": "module",
-  "scripts": {
-    "dev": "bud dev",
-    "build": "bud build",
-    "translate": "yarn translate:pot && yarn translate:update",
-    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
-    "translate:update": "wp i18n update-po ./resources/lang/sage.pot ./resources/lang/*.po",
-    "translate:compile": "yarn translate:mo && yarn translate:js",
-    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
-    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
-  },
-  "devDependencies": {
-    "@roots/bud": "6.12.0",
-    "@roots/bud-tailwindcss": "6.12.0",
-    "@roots/sage": "6.12.0"
-  },
-  "dependencies": {}
+	"name": "mix",
+	"version": "1.0.0",
+	"description": "",
+	"main": "resources/scripts/main.js",
+	"scripts": {
+		"dev": "npm run development",
+		"development": "mix",
+		"watch": "mix watch",
+		"watch-poll": "mix watch -- --watch-options-poll=1000",
+		"hot": "mix watch --hot",
+		"prod": "npm run production",
+		"production": "mix --production",
+		"watch-prod": "mix --production -- --watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"browser-sync": "^2.29.1",
+		"browser-sync-webpack-plugin": "^2.3.0",
+		"bulma": "^0.9.4",
+		"cross-env": "^7.0.3",
+		"jquery": "^3.6.4",
+		"laravel-mix": "^6.0.49",
+		"node-sass": "^8.0.0",
+		"node-sass-glob-importer": "^5.3.2",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.62.0",
+		"sass-loader": "^13.2.2",
+		"@roots/sage": "6.8.0"
+	},
+	"dependencies": {
+		"postcss-css-variables": "^0.19.0",
+		"webpack": "^5.79.0"
+	}
 }

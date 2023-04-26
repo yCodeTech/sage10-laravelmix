@@ -1,0 +1,44 @@
+/**
+ * Fonts
+ */
+
+// @import | @font-face
+
+// Fallback font = other fonts | sans-serif | serif
+
+// Helper mixins for fonts \\
+
+// Makes for a cleaner usage of fonts
+// and prevents duplicate code.
+
+// Usage: @include font-name-thin();
+
+// Example:
+// .title {
+//		@include font-name-bold();
+// }
+
+@mixin font-name-thin {
+	font-family: "font-name", sans-serif;
+	font-weight: 100;
+}
+@mixin font-name-light {
+	font-family: "font-name", sans-serif;
+	font-weight: 300;
+}
+@mixin font-name-regular {
+	font-family: "font-name", sans-serif;
+	font-weight: 400;
+}
+@mixin font-name-semibold {
+	font-family: "font-name", sans-serif;
+	font-weight: 600;
+}
+@mixin font-name-bold {
+	font-family: "font-name", sans-serif;
+	font-weight: 700;
+}
+@mixin font-name-black {
+	font-family: "font-name", sans-serif;
+	font-weight: 900;
+}

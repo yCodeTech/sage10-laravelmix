@@ -1,0 +1,157 @@
+@use "sass:string";
+
+// Responsive mixins \\
+
+// Max-width
+
+@function to-string($list, $glue: "", $is-nested: false) {
+	$result: null;
+
+	@for $i from 1 through length($list) {
+		$e: nth($list, $i);
+
+		@if type-of($e) == list {
+			$result: $result#{to-string($e, $glue, true)};
+		} @else {
+			$result: if($i != length($list) or $is-nested, $result#{$e}#{$glue}, $result#{$e});
+		}
+	}
+
+	@return $result;
+}
+
+/// ### Responsive Max Width
+///
+/// Max-width Media Query with optional other queries.
+/// @param { *[Number | String (with units)]* } $width [Required] The width of the screen to query against.
+/// ##### Note: A Number type value will have the unit `px` appended to it. Otherwise, use a String.
+///
+/// @param {*[SASS List]*} $mediaOpts [Optional, default: false] Extra arguments as a list
+/// 	to additionally check against.
+///
+/// ##### Note: The list will be concatenated together to form a single string. The first listed arg will always be prefixed with the "and" operator. If multiple arguments are to be listed, adding and/or operators will also need to be listed.
+///
+/// @content Gets the css/scss content of rule.
+///
+/// @example scss
+/// 	// Using the or operator denoted by the comma (",")
+/// 	@include responsive_max_width($bp-400, ($mobilePointerMQ, ",", "(hover: none)")) {}
+///
+/// 	// Using the "and" operator.
+/// 	@include responsive_max_width($bp-400, ($mobilePointerMQ, "and", "(hover: none)")) {}
+///
+/// 	Compiles to:
+/// 	// @media screen and (max-width: 400px) and (any-pointer: coarse), (hover: none) {}
+///
+/// 	// @media screen and (max-width: 400px) and (any-pointer: coarse) and (hover: none) {}
+///
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries MDN Docs: Using Media Queries
+
+@mixin responsive_max_width($width, $mediaOpts: false) {
+	@if (unitless($width)) {
+		$width: #{$width}px;
+	}
+
+	@if $mediaOpts != false {
+		$mediaOpts: "(max-width: #{$width}) and #{to-string($mediaOpts, "")}";
+	} @else {
+		$mediaOpts: "(max-width: #{$width})";
+	}
+
+	@media screen and #{$mediaOpts} {
+		@content;
+	}
+}
+
+@mixin responsive-height-laptop($res) {
+	@if (unitless($res)) {
+		$res: #{$res}px;
+	}
+
+	@media screen and (max-height: $res) and (orientation: landscape) {
+		@content;
+	}
+}
+
+// Min-width
+@mixin mobilefirst($res) {
+	@if (unitless($res)) {
+		$res: #{$res}px;
+	}
+
+	@media screen and (min-width: $res) {
+		@content;
+	}
+}
+
+// Min-width and min-height
+@mixin mobilefirst-width-height($width, $height) {
+	@if (unitless($width)) {
+		$width: #{$width}px;
+	}
+
+	@if (unitless($height)) {
+		$height: #{$height}px;
+	}
+
+	@media screen and (min-width: $width) and (min-height: $height) {
+		@content;
+	}
+}
+
+// Min-width and max-width
+@mixin mobilefirst-between($start, $end) {
+	@if (unitless($start)) {
+		$start: #{$start}px;
+	}
+
+	@if (unitless($end)) {
+		$end: #{$end}px;
+	}
+
+	@media screen and (min-width: $start) and (max-width: $end) {
+		@content;
+	}
+}
+
+@mixin sr_only() {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@function wp-color($color) {
+	@return var(--wp--preset--color--#{$color});
+}
+
+/**
+* Better Clamp function for fonts etc
+*/
+/// @param $property The name of the CSS property.
+/// @param $minSize The minimum size.
+/// @param $maxSize The maximum size.
+/// @param $minWidth The minimum screen width. Default 480.
+/// @param $maxWidth The maximum screen width. Default 1920.
+@mixin betterClamp($property, $minSize, $maxSize, $minWidth: 480, $maxWidth: 1920) {
+	// convert to rem
+	$minSize: calc($minSize / 20);
+	$maxSize: calc($maxSize / 20);
+	$maxWidth: calc($maxWidth / 20);
+	$minWidth: calc($minWidth / 20);
+	// do calculations
+	$slope: calc(($maxSize - $minSize) / ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+	$preferredValue: #{$yAxisIntersection * 1rem} + " + " + #{$slope * 100vw};
+	// output as rem
+	$minSize: $minSize * 1rem;
+	$maxSize: $maxSize * 1rem;
+
+	@if $minSize > $maxSize {
+		#{$property}: clamp($maxSize, $preferredValue, $minSize);
+	} @else {
+		#{$property}: clamp($minSize, $preferredValue, $maxSize);
+	}
+}

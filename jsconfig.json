@@ -1,30 +1,32 @@
 {
-  "extends": "@roots/sage/config/jsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "resources",
-    /**
-     * Resolve aliases
-     */
-    "paths": {
-      "@fonts/*": ["fonts/*"],
-      "@images/*": ["images/*"],
-      "@scripts/*": ["scripts/*"],
-      "@styles/*": ["styles/*"]
-    },
-    /**
-     * Type definitions
-     */
-    "types": [
-      "@roots/bud",
-      "@roots/bud-react",
-      "@roots/bud-postcss",
-      "@roots/bud-preset-recommend",
-      "@roots/bud-preset-wordpress",
-      "@roots/bud-tailwindcss",
-      "@roots/bud-wordpress-theme-json",
-      "@roots/sage"
-    ]
-  },
-  "include": ["bud.config.js", "resources"],
-  "exclude": ["node_modules", "public"]
+	"extends": "@roots/sage/config/jsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "resources",
+		"paths": {
+			"@fonts/*": [
+				"fonts/*"
+			],
+			"@images/*": [
+				"images/*"
+			],
+			"@scripts/*": [
+				"scripts/*"
+			],
+			"@styles/*": [
+				"styles/*"
+			]
+		},
+		"types": [
+			"@roots/sage"
+		]
+	},
+	"typeAcquisition": {
+		"include": [
+			"jquery"
+		]
+	},
+	"exclude": [
+		"node_modules",
+		"public"
+	]
 }
