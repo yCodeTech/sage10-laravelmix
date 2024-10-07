@@ -22,7 +22,7 @@
 		"cross-env": "^7.0.3",
 		"jquery": "^3.7.1",
 		"laravel-mix": "^6.0.49",
-		"node-sass": "^8.0.0",
+		"node-sass": "^9.0.0",
 		"node-sass-glob-importer": "^5.3.3",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.79.4",
