@@ -4,7 +4,7 @@ updates:
     directory: '/'
     schedule:
       interval: daily
-      time: '21:56'
+      time: '10:00'
       timezone: Europe/London
     open-pull-requests-limit: 10
     versioning-strategy: increase
@@ -16,7 +16,7 @@ updates:
     directory: '/'
     schedule:
       interval: daily
-      time: '21:56'
+      time: '10:00'
       timezone: Europe/London
     open-pull-requests-limit: 10
     versioning-strategy: increase
