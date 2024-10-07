@@ -1,0 +1,37 @@
+name: automerge
+on:
+  pull_request:
+    types:
+      - labeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status:
+  push:
+  schedule:
+    - cron: "30 10 * * 1,4"
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.6"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "dependabot"
+          UPDATE_LABELS: "dependabot"
+          MERGE_ERROR_FAIL: "true"
+          LOG: "DEBUG"
+          MERGE_READY_STATE: "clean,has_hooks,unstable,unknown"
+          MERGE_RETRIES: "12"
+          MERGE_RETRY_SLEEP: "10000"
