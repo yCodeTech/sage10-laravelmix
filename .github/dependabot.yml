@@ -3,9 +3,9 @@ updates:
   - package-ecosystem: composer
     directory: '/'
     schedule:
-      interval: weekly
-      time: '08:00'
-      timezone: US/Central
+      interval: daily
+      time: '21:25'
+      timezone: Europe/London
     open-pull-requests-limit: 10
     versioning-strategy: increase
     labels:
@@ -15,9 +15,9 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: weekly
-      time: '08:00'
-      timezone: US/Central
+      interval: daily
+      time: '21:25'
+      timezone: Europe/London
     open-pull-requests-limit: 10
     versioning-strategy: increase
     labels:
