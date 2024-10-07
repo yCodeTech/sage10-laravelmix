@@ -40,7 +40,7 @@
 	},
 	"require": {
 		"php": "^8.0",
-		"composer/installers": "^1.12",
+		"composer/installers": "^2.3",
 		"log1x/sage-directives": "^1.1"
 	},
 	"require-dev": {
