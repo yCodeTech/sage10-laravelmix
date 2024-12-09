@@ -26,7 +26,7 @@
 		"node-sass-glob-importer": "^5.3.3",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.82.0",
-		"sass-loader": "^16.0.3",
+		"sass-loader": "^16.0.4",
 		"@roots/sage": "6.24.0"
 	},
 	"dependencies": {
