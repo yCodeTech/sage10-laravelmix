@@ -26,8 +26,6 @@ return [
 	|
 	| assets: key-value pairs to match assets to their revved counterparts
 	|
-	| bundles: a series of entrypoints for loading bundles
-	|
 	*/
 
 	'manifests' => [
