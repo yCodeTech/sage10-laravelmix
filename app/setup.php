@@ -14,11 +14,11 @@ namespace App;
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-		wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+		wp_enqueue_style('sage/main.css', asset_path('css/main.css'), false, null);
+		wp_enqueue_script('sage/main.js', asset_path('js/main.js'), ['jquery'], null, true);
 
 		if (is_front_page()) {
-			wp_enqueue_script('sage/front-page.js', asset_path('scripts/front-page.js'), ['jquery'], null, true);
+			wp_enqueue_script('sage/front-page.js', asset_path('js/front-page.js'), ['jquery'], null, true);
 		}
 
 		// Move Wordpress jQuery to footer
@@ -35,7 +35,7 @@ add_action(
 add_action(
 	'wp_head',
 	function () {
-		$critical = @realpath(asset_path('styles/critical.css'));
+		$critical = @realpath(asset_path('css/critical.css'));
 		if (file_exists($critical)) {
 			echo '<style>' . @file_get_contents($critical) . '</style>';
 		}
@@ -128,7 +128,7 @@ add_action(
 		 * Use main stylesheet for visual editor
 		 * @see resources/assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style(asset_path('styles/main.css'));
+		add_editor_style(asset_path('css/main.css'));
 	},
 	20
 );
