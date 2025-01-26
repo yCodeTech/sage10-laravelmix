@@ -1,7 +1,6 @@
 const mix = require('laravel-mix');
 let fs = require('fs');
 let path = require('path');
-const sassGlobImporter = require('node-sass-glob-importer');
 
 /**
  *
@@ -35,41 +34,7 @@ mix.setPublicPath('./public');
 /**
  * Setup main scss file to compile.
  */
-mix.sass('resources/scss/main.scss', 'css', {
-	sassOptions: {
-		importer: sassGlobImporter(),
-		logger: {
-			debug(message, options) {
-				var log = 'Debugging (sass @debug) ::: \n\n';
-
-				if (options.span) {
-					const span = options.span;
-					log +=
-						`${message} at\n\n` + `${span.url}:${span.start.line} `;
-				} else {
-					log += `${message} at\n\n` + options.stack;
-				}
-				log += '\n\n::::::::::::::::\n\n';
-
-				console.log(log);
-			},
-			warn(message, options) {
-				var log = 'Debugging (sass @warn) ::: \n\n';
-
-				if (options.span) {
-					const span = options.span;
-					log +=
-						`${message} at\n\n` + `${span.url}:${span.start.line} `;
-				} else {
-					log += `${message} at\n\n` + options.stack;
-				}
-				log += '\n\n::::::::::::::::\n\n';
-
-				console.log(log);
-			},
-		},
-	},
-})
+mix.sass('resources/scss/main.scss', 'css')
 	.sass('resources/scss/critical.scss', 'css')
 	.options({
 		processCssUrls: false,
