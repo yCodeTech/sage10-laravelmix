@@ -13,21 +13,12 @@
 // Import theme styles \\
 @import "common/global";
 
-// Import everything in directory \\
-
-// Uses node-sass-glob-importer
-
-// Only do this when the load order
-// of the files doesn't matter.
-
-// Components don't rely on other components.
-@import "components/**/*";
-
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/posts";
 @import "layouts/tinymce";
 
-// Import all pages scss files, as they don't rely on each other \\
-@import "pages/**/*";
+// Import all pages scss files \\
+@import "pages/landing-page";
+@import "pages/pages";

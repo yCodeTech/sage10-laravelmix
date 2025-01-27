@@ -1,32 +1,6 @@
 {
-	"extends": "@roots/sage/config/jsconfig.json",
-	"compilerOptions": {
-		"baseUrl": "resources",
-		"paths": {
-			"@fonts/*": [
-				"fonts/*"
-			],
-			"@images/*": [
-				"images/*"
-			],
-			"@scripts/*": [
-				"scripts/*"
-			],
-			"@styles/*": [
-				"styles/*"
-			]
-		},
-		"types": [
-			"@roots/sage"
-		]
-	},
 	"typeAcquisition": {
-		"include": [
-			"jquery"
-		]
+		"include": ["jquery"]
 	},
-	"exclude": [
-		"node_modules",
-		"public"
-	]
+	"exclude": ["node_modules", "public"]
 }

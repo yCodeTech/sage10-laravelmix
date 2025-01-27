@@ -39,7 +39,7 @@
     }
   },
   "require": {
-    "php": "^8.0",
+    "php": ">=8.2",
     "composer/installers": "^2.3",
     "log1x/sage-directives": "^2.0"
   },
@@ -57,11 +57,6 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "scripts": {
-    "lint": [
-      "phpcs --extensions=php --standard=PSR12 app"
-    ]
-  },
   "extra": {
     "acorn": {
       "providers": [
