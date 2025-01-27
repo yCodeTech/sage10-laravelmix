@@ -5,14 +5,10 @@
 </p>
 
 <p align="center">
-<a href="https://img.shields.io/badge/php-%23777BB4.svg?&logo=php&logoColor=white">
     <img alt="PHP version" src="https://img.shields.io/badge/v10.8.2-525DDC?style=flat-square&logo=rootssage&label=Sage&labelColor=%23f6f7f8
 	">
-  </a>
-<a href="https://img.shields.io/badge/php-%23777BB4.svg?&logo=php&logoColor=white">
     <img alt="PHP version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FyCodeTech%2Fsage10-laravelmix%2Fraw%2Fmaster%2Fcomposer.json&query=%24.require.php&style=flat-square&label=php&color=%23777BB4
 	">
-  </a>
 </p>
 
 <p align="center">Advanced WordPress starter theme with <del>Tailwind CSS</del> SASS/SCSS and Laravel Blade</p>
