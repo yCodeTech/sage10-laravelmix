@@ -5,16 +5,13 @@
 </p>
 
 <p align="center">
-  <a href="https://packagist.org/packages/roots/sage">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/sage?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
+<a href="https://img.shields.io/badge/php-%23777BB4.svg?&logo=php&logoColor=white">
+    <img alt="PHP version" src="https://img.shields.io/badge/v10.8.2-525DDC?style=flat-square&logo=rootssage&label=Sage&labelColor=%23f6f7f8
+	">
   </a>
-
-  <a href="https://github.com/roots/sage/actions/workflows/main.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/sage/main.yml?branch=main&logo=github&label=CI&style=flat-square">
-  </a>
-
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
+<a href="https://img.shields.io/badge/php-%23777BB4.svg?&logo=php&logoColor=white">
+    <img alt="PHP version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FyCodeTech%2Fsage10-laravelmix%2Fraw%2Fmaster%2Fcomposer.json&query=%24.require.php&style=flat-square&label=php&color=%23777BB4
+	">
   </a>
 </p>
 
@@ -29,7 +26,7 @@
 
 ## Overview
 
-Sage is a hybrid WordPress starter theme with block editor support.
+Sage is a hybrid WordPress starter theme with:
 
 -   Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade)
 -   Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn)
