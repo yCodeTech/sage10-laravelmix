@@ -1,0 +1,27 @@
+{
+	"useTabs": true,
+	"tabWidth": 4,
+	"semi": true,
+	"printWidth": 150,
+	"bracketSameLine": true,
+	"bracketSpacing": false,
+	"overrides": [
+		{
+			"files": [
+				"*.json",
+				"*.jsonc"
+			],
+			"options": {
+				"printWidth": 5
+			}
+		},
+		{
+			"files": [
+				"*.js"
+			],
+			"options": {
+				"printWidth": 80
+			}
+		}
+	]
+}
