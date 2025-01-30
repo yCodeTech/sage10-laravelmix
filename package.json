@@ -13,7 +13,7 @@
 		"watch-prod": "mix --production -- --watch"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.29.3",
+		"browser-sync": "^3.0.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"bulma": "^1.0.3",
 		"cross-env": "^7.0.3",
