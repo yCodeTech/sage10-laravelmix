@@ -12,6 +12,15 @@ updates:
       - 'dependabot'
       - 'dependencies'
       - 'composer'
+    groups:
+      prod-dependencies:
+        dependency-type: 'production'
+        patterns:
+          - '*'
+      dev-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - '*'
   - package-ecosystem: npm
     directory: '/'
     schedule:
@@ -24,3 +33,12 @@ updates:
       - 'dependabot'
       - 'dependencies'
       - 'npm'
+    groups:
+      prod-dependencies:
+        dependency-type: 'production'
+        patterns:
+          - '*'
+      dev-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - '*'
