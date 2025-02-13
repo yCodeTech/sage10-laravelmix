@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Functions file
+ *
+ *! Please do not add any new functions to this file.
+ * Use the app/filters.php file instead.
+ *! Treat the filters.php file as the new functions file.
+ */
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -35,7 +43,7 @@ if (! function_exists('\Roots\bootloader')) {
 		'',
 		[
 			'link_url' => 'https://roots.io/acorn/docs/installation/',
-			'link_text' => __('Acorn Docs: Installation', 'sage'),
+			'link_text' => __('Acorn Docs: Installation', 'sage')
 		]
 	);
 }
@@ -53,7 +61,7 @@ if (! function_exists('\Roots\bootloader')) {
 | is registered alongside Sage.
 |
 */
-$required_files = ['admin', 'filters', 'helpers', 'setup'];
+$required_files = ['admin', 'filters', 'helpers', 'setup', 'disable_wp_rubbish'];
 
 collect($required_files)
 	->each(
