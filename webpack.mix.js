@@ -2,6 +2,9 @@ const mix = require('laravel-mix');
 let fs = require('fs');
 let path = require('path');
 
+// Watch for changes/additions/deletions in folders like images.
+require('laravel-mix-copy-watched');
+
 /**
  *
  * Commands:
@@ -27,9 +30,10 @@ mix.browserSync({
 mix.disableNotifications();
 
 /**
- * setup general build/output folder
+ * Setup general public/output folder
  */
-mix.setPublicPath('./public');
+const publicPath = 'public';
+mix.setPublicPath(`./${publicPath}`);
 
 /**
  * Setup main scss file to compile.
@@ -66,16 +70,18 @@ mix.autoload({
 mix.js('resources/js/main.js', 'js');
 mix.js('resources/js/templates/front-page.js', 'js');
 
-mix.copyDirectory('resources/images', 'public/images').copyDirectory(
-	'resources/fonts',
-	'public/fonts'
-);
+// Copy images and fonts keeping any subdirectories intact.
+mix.copyDirectoryWatched('resources/images', `${publicPath}/images`, {
+	base: 'images',
+}).copyDirectoryWatched('resources/fonts', `${publicPath}/fonts`, {
+	base: 'fonts',
+});
 
 mix.sourceMaps(true, 'source-map').version();
 
 mix.after(() => {
 	let manifest = JSON.parse(
-		fs.readFileSync('./public/mix-manifest.json').toString()
+		fs.readFileSync(`./${publicPath}/mix-manifest.json`).toString()
 	);
 
 	let manifest2 = {};
@@ -86,7 +92,7 @@ mix.after(() => {
 	}
 
 	fs.writeFileSync(
-		'./public/mix-manifest.json',
+		`./${publicPath}/mix-manifest.json`,
 		JSON.stringify(manifest2, null, 2)
 	);
 });
