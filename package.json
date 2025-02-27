@@ -15,7 +15,6 @@
 	"devDependencies": {
 		"browser-sync": "^3.0.3",
 		"browser-sync-webpack-plugin": "github:Va1/browser-sync-webpack-plugin",
-		"bulma": "^1.0.3",
 		"cross-env": "^7.0.3",
 		"jquery": "^3.7.1",
 		"laravel-mix": "^6.0.49",
