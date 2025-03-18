@@ -21,7 +21,7 @@
 		"laravel-mix-copy-watched": "^3.0.0",
 		"node-sass": "^9.0.0",
 		"resolve-url-loader": "^5.0.0",
-		"sass": "^1.85.1",
+		"sass": "^1.86.0",
 		"sass-loader": "^16.0.5"
 	},
 	"dependencies": {
