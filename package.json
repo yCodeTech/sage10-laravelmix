@@ -13,7 +13,7 @@
 		"watch-prod": "mix --production -- --watch"
 	},
 	"devDependencies": {
-		"browser-sync": "^3.0.3",
+		"browser-sync": "^3.0.4",
 		"browser-sync-webpack-plugin": "github:Va1/browser-sync-webpack-plugin",
 		"cross-env": "^7.0.3",
 		"jquery": "^3.7.1",
@@ -21,7 +21,7 @@
 		"laravel-mix-copy-watched": "^3.0.0",
 		"node-sass": "^9.0.0",
 		"resolve-url-loader": "^5.0.0",
-		"sass": "^1.86.0",
+		"sass": "^1.86.2",
 		"sass-loader": "^16.0.5"
 	},
 	"dependencies": {
