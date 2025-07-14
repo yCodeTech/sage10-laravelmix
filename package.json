@@ -26,6 +26,6 @@
 	},
 	"dependencies": {
 		"postcss-css-variables": "^0.19.0",
-		"webpack": "^5.100.0"
+		"webpack": "^5.100.1"
 	}
 }
